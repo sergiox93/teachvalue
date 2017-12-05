@@ -1,0 +1,41 @@
+
+<p>Califica al profe: <% @profes.each do |header| %>
+            <th><%= header.name %></th>
+          <% end %></p>
+<%= form_tag '/poster' do %>
+<p>Comentario</p>
+  <div class="field">
+    <%= text_area_tag :comment, nil, class: 'form-control'%>
+  </div>
+
+    <br><br>
+    
+<table class="table">
+    <thead>
+      <tr>
+        <th>Rate</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= radio_button_tag(:ratings, 1) %>1</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:ratings, 2) %>2</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:ratings, 3) %>3</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:ratings, 4) %>4</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:ratings, 5) %>5</td>
+      </tr>
+    </tbody>
+  </table>
+
+ <%= submit_tag 'buscar' %>
+
+ <% end %>

@@ -1,0 +1,56 @@
+<%= form_with(model: rating, local: true) do |form| %>
+  <% if rating.errors.any? %>
+    <div id="error_explanation">
+      
+      <h2><%= pluralize(rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+      <ul>
+      <% rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      <br><br>
+
+<p>Comentario</p>
+  <div class="field">
+    <%= form.text_area :comment, id: :rating_name ,class: 'form-control'%>
+  </div>
+
+    <br><br>
+    
+<table class="table">
+    <thead>
+      <tr>
+        <th>Rate</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= radio_button_tag(:rating_rating, "child") %>1</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:rating_rating, "child") %>2</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:rating_rating, "child") %>3</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:rating_rating, "child") %>4</td>
+      </tr>
+      <tr>
+        <td><%= radio_button_tag(:rating_rating, "child") %>5</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <div class="actions">
+    <%= form.submit 'Send', class: 'btn btn-success' %>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,81 @@
+
+
+
+<% if @procu ==nil && @percocet==nil %>
+
+
+<% if @procu2 !=nil %>
+
+<div class="w3-col l4">
+<div class="w3-card w3-margin w3-margin-top">
+  <img src="http://icons.iconarchive.com/icons/gakuseisean/radium/256/MSN-Messenger-icon.png" style="width:70%">
+    <div class="w3-container w3-white">
+       <% @procu2.each do |item| %>
+      <h3><b><%=item.name %></b></h3>
+      <p> Last level of education: <%= item.level %></p>
+      <p> My rating is: No rated Yet</p>
+      <p> Contact me: <%= item.correo %></p>
+      <% end %>
+    </div>
+  </div>
+  </div>  
+<% else%>
+
+<div class="w3-col l4">
+<div class="w3-card w3-margin w3-margin-top">
+  <img src="http://icons.iconarchive.com/icons/gakuseisean/radium/256/MSN-Messenger-icon.png" style="width:70%">
+    <div class="w3-container w3-white">
+       <% @percocet2.each do |item| %>
+      <h3><b><%=item.name %></b></h3>
+      <p> Last level of education: <%= item.level %></p>
+      <p> My rating is: No rated Yet</p>
+      <p> Contact me: <%= item.correo %></p>
+      <% end %>
+    </div>
+  </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+<%else%>
+
+
+<% if @procu !=nil %>
+
+<div class="w3-col l4">
+<div class="w3-card w3-margin w3-margin-top">
+  <img src="http://icons.iconarchive.com/icons/gakuseisean/radium/256/MSN-Messenger-icon.png" style="width:70%">
+    <div class="w3-container w3-white">
+       <% @procu.each do |item| %>
+      <h3><b><%=item.name %></b></h3>
+      <p> Last level of education: <%= item.level %></p>
+      <p> My rating is: <%= item.rate %></p>
+      <p> Contact me: <%= item.correo %></p>
+      <% end %>
+    </div>
+  </div>
+  </div>  
+<% else%>
+
+<div class="w3-col l4">
+<div class="w3-card w3-margin w3-margin-top">
+  <img src="http://icons.iconarchive.com/icons/gakuseisean/radium/256/MSN-Messenger-icon.png" style="width:70%">
+    <div class="w3-container w3-white">
+       <% @percocet.each do |item| %>
+      <h3><b><%=item.name %></b></h3>
+      <p> Last level of education: <%= item.level %></p>
+      <p> My rating is: <%= item.rate %></p>
+      <p> Contact me: <%= item.correo %></p>
+      <% end %>
+    </div>
+  </div>
+  </div>
+<% end %>
+<% end%>

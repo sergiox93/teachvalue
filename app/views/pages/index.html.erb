@@ -1,0 +1,153 @@
+
+<h1><b>TEACHVALUE</b></h1>
+  <p>Made in 3 days <span class="w3-tag">by Sergio Munoz</span></p>
+
+<div class="w3-row">
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="https://lh3.googleusercontent.com/-EZ68loszZoQ/U4dbOX_u-JI/AAAAAAAAAK0/auR-gnvM8X0/w1600-h1066/panoramica_universidad_el_bosque.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Welcome to TeachValue</b></h3>
+      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Hi there, this app is ment to let studes rate teachers and add comments about their classes by giving constructive critics on how they can get better at teaching.</p>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <% items = @ultimo%>
+      <% if items == nil%>
+  <div class="w3-card-4 w3-margin w3-white">
+    
+    <div class="w3-container">
+      <h3><b>NO POSTS YET</b></h3>
+      <h5><span class="w3-opacity"> </span></h5>
+    </div>
+        <div class="w3-container">
+      <p></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <%= form_tag 'blog' do %>
+           <p><%= submit_tag 'SEE ALL POSTS>>', class: 'w3-button w3-padding-large w3-white w3-border' %></p>
+           <% end %>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <% else %>
+    
+    <div class="w3-card-4 w3-margin w3-white">
+    <% items = @ultimo%>
+    <div class="w3-container">
+      <h3><b>LATEST POST</b></h3>
+      <h5>Profe: <%=items.name %>, <span class="w3-opacity">Rating: <%=items.rating%></span></h5>
+    </div>
+        <div class="w3-container">
+      <p><%=items.comment %></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <%= form_tag 'blog' do %>
+           <p><%= submit_tag 'SEE ALL POSTS>>', class: 'w3-button w3-padding-large w3-white w3-border' %></p>
+           <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+
+  
+  
+  
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="http://knowledge.wharton.upenn.edu/wp-content/uploads/2015/11/self-promotion.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h3><b>BEST TEACHER</b></h3>
+        <% @mejor.each do |item| %>
+      <h4><b><%=item.name %></b></h4>
+      <p>Hey! thanks for choosing me as the best teacher of the moment. My rating is: <%= item.wendy %></p>
+      <% end %>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Honorable Mentions</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      
+      <% if @segundo==nil %>
+      <li class="w3-padding-16">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdPltgVaNaoCUt3uSYV8cMlLLrz7ZlcFIPQqyJfxiI3PU3CGjD" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+   
+        <span class="w3-large">No records Yet</span><br>
+      </li>
+      
+      <% else %>
+      <%item = @segundo %>
+      <li class="w3-padding-16">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdPltgVaNaoCUt3uSYV8cMlLLrz7ZlcFIPQqyJfxiI3PU3CGjD" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"><%= item.name %></span><br>
+        <span>Rating: <%= item.wendy %></span>
+      </li>
+      <% end %>
+      
+      <li class="w3-padding-16">
+        <img src="data:image/png;base64,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" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+         <% if @tercero==nil %>
+         <%ite = "No records yet" %>
+        <span class="w3-large"><%=ite%></span><br>
+          <% else %>
+           <%ite = @tercero %>
+           <span class="w3-large"><%=ite.name %></span><br>
+        <span>Rating: <%= ite.wendy %></span>
+         <% end %>
+        
+      </li> 
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Wall of Shame</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p>
+    <% @peor.each do |item| %>
+    <h4><b><%=item.name %></b></h4>
+    <p>Sorry I've let you down guys, I'll do my best to get better. My rating is: <%= item.wendy %></p>
+    <% end %>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Wendei.com</a></p>
+</footer>
+
+</body>

@@ -1,0 +1,15 @@
+
+
+<p>Califica a tu profe, buscalo por curso</p>
+<%= form_tag '/wendy' do %>
+<%= select_tag 'buenwendy', options_from_collection_for_select(@cursitos, 'id', 'name') %>
+
+<%= submit_tag 'buscar' %>
+
+ <% end %>
+
+<div class="field">
+
+</div>
+
+
